@@ -1,0 +1,7 @@
+#!/bin/bash
+
+/mscf/apps/moab/current/bin/showres -g -n | awk '{
+	if ($4 ~ /Running/) {
+		print $1 "-ib",$3;
+	}
+}'
